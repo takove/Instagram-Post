@@ -49,6 +49,19 @@ body {
     font-size: 22px;
     padding-right: 5px;
     cursor: pointer;
+    border-radius: 4px;
+    padding: 8px;
+    margin: -8px;
+    transition: background-color 0.2s ease;
+}
+
+#menu-icon:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#menu-icon:focus {
+    outline: 2px solid #0095f6;
+    outline-offset: 2px;
 }
 
 #main-frame {
@@ -65,6 +78,12 @@ body {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f8f8;
 }
 .lower-icon-bar {
     display: flex;
@@ -105,6 +124,14 @@ main {
 .bottom p {
     margin: 0 0 8px 0;
 }
+
+.likes-section {
+    margin-bottom: 8px;
+}
+
+.caption-section {
+    line-height: 20px;
+}
 #checkbox {
     display: inline-block;
     position: relative;
@@ -139,6 +166,22 @@ main {
 
 #checkbox:hover > input[type='checkbox']:checked + i {
     color: #ed4956;
+}
+
+#checkbox:hover > input[type='checkbox'] + i {
+    color: #8e8e8e;
+}
+
+#checkbox:focus-within {
+    outline: 2px solid #0095f6;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.lower-icon-bar div i:focus {
+    outline: 2px solid #0095f6;
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 @keyframes heartBeat {
