@@ -6,52 +6,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Instagram Post - HTML5 by Rigoberto</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main>
-        <div id="main-frame">
-            <div class="header">
+    <main role="main">
+        <article id="main-frame" role="article" aria-label="Instagram post by HTML5">
+            <header class="header" role="banner">
                 <div class="top-left">
-                    <i id="html5-icon" class="fab fa-html5"></i>
+                    <i id="html5-icon" class="fab fa-html5" aria-hidden="true"></i>
                     <div class="top-left-text">
                         <h5><b>HTML5</b></h5>
-                            <p>Rigoberto</p>
+                        <p>Rigoberto</p>
                     </div>
                 </div>
-                <div id="menu-icon">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>                
+                <div id="menu-icon" role="button" tabindex="0">
+                    <i class="fa-solid fa-ellipsis-vertical" aria-label="More options"></i>                
                 </div>
+            </header>
+            <div class="image-container">
+                <img id="main-picture"
+                    src="https://i.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
+                    alt="Cute black dog lying on grass - Instagram post by HTML5">
             </div>
-            <img id="main-picture"
-                src="https://i.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0"
-                alt="dog">
-            <div class="footer">
+            <footer class="footer" role="contentinfo">
                 <div class="lower-icon-bar">
                     <div>
                         <span id="checkbox">
-                            <input id="ckeckbox-element" type="checkbox"/>  
-                            <i class="far fa-heart"></i>                            
+                            <input id="checkbox-element" type="checkbox" aria-label="Like post"/>  
+                            <i class="far fa-heart" aria-hidden="true"></i>                            
                         </span>                        
-                        <i class="far fa-comment"></i>
-                        <i class="far fa-paper-plane"></i>                    
+                        <i class="far fa-comment" aria-label="Comment on post" tabindex="0"></i>
+                        <i class="far fa-paper-plane" aria-label="Share post" tabindex="0"></i>                    
                     </div>
                     <div>
-                        <i class="far fa-bookmark"></i>
+                        <i class="far fa-bookmark" aria-label="Save post" tabindex="0"></i>
                     </div>
                 </div>
                 <div class="bottom">
-                    <div>
+                    <div class="likes-section">
                         <p>Liked by <b>4GeeksAcademy</b>, <b>html5</b>, <b>Web</b> and <b>100,000 others</b></p>
                     </div>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut blanditiis, dolor, impedit totam quae veniam ipsa accusantium incidunt sapiente molestias quas fugit dolores unde eum. Perspiciatis aut quisquam laborum id?</p>
+                    <div class="caption-section">
+                        <p><b>HTML5</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut blanditiis, dolor, impedit totam quae veniam ipsa accusantium incidunt sapiente molestias quas fugit dolores unde eum.</p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </footer>
+        </article>
     </main>
 </body>
 
