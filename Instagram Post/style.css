@@ -1,21 +1,43 @@
 body {
-    background-color: #fafafa;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     margin: 0;
     padding: 20px;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 #html5-icon {
     font-size: 32px;
     border-radius: 50%;
     color: #e34c26;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, #ff6b6b, #e34c26);
+    box-shadow: 0 4px 12px rgba(227, 76, 38, 0.3), 0 0 20px rgba(227, 76, 38, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#html5-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(227, 76, 38, 0.4), 0 0 25px rgba(227, 76, 38, 0.15);
+}
+
+#html5-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+    border-radius: 50%;
 }
 .top-left {
     display: flex;
@@ -28,39 +50,46 @@ body {
 }
 
 .top-left-text h5 {
-    font-weight: 600;
+    font-weight: 700;
     line-height: 18px;
+    color: #1a1a1a;
+    letter-spacing: -0.2px;
 }
 
 .top-left-text p {
     font-size: 12px;
-    color: #8e8e8e;
+    color: #8e8e93;
     line-height: 14px;
+    font-weight: 400;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 16px;
-    border-bottom: 1px solid #efefef;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(250,250,250,0.95) 100%);
+    backdrop-filter: blur(10px);
 }
 #menu-icon {
     font-size: 22px;
-    padding-right: 5px;
     cursor: pointer;
-    border-radius: 4px;
-    padding: 8px;
-    margin: -8px;
-    transition: background-color 0.2s ease;
+    border-radius: 8px;
+    padding: 10px;
+    margin: -10px;
+    transition: all 0.3s ease;
+    color: #65676b;
 }
 
 #menu-icon:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #1c1e21;
+    transform: scale(1.1);
 }
 
 #menu-icon:focus {
-    outline: 2px solid #0095f6;
+    outline: 2px solid #1877f2;
     outline-offset: 2px;
 }
 
@@ -68,69 +97,142 @@ body {
     width: 375px;
     max-width: 100%;
     background-color: white;
-    border: 1px solid #dbdbdb;
-    border-radius: 8px;
+    border: 1px solid #e1e8ed;
+    border-radius: 16px;
     margin: 20px auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#main-frame:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #main-picture {
     width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+#main-picture:hover {
+    transform: scale(1.02);
 }
 
 .image-container {
     position: relative;
     overflow: hidden;
-    background-color: #f8f8f8;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 .lower-icon-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 24px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    padding: 4px 0;
 }
 
 .footer {
-    padding: 16px;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(250,250,250,0.98) 100%);
 }
 
 .lower-icon-bar div i {
     padding-right: 16px;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
+    color: #65676b;
+    border-radius: 8px;
+    padding: 8px;
+    margin: -8px 8px -8px -8px;
 }
 
 .lower-icon-bar div i:hover {
-    color: #8e8e8e;
+    color: #1c1e21;
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1.1);
 }
 
 .lower-icon-bar div i:last-child {
-    padding-right: 0;
+    padding-right: 8px;
+    margin-right: -8px;
 }
 main {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     width: 100%;
     max-width: 468px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .bottom {
     font-size: 14px;
-    line-height: 18px;
-    color: #262626;
+    line-height: 20px;
+    color: #1c1e21;
 }
 
 .bottom p {
-    margin: 0 0 8px 0;
+    margin: 0 0 12px 0;
 }
 
 .likes-section {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.likes-section p {
+    font-weight: 400;
+    color: #65676b;
+}
+
+.likes-section b {
+    color: #1c1e21;
+    font-weight: 600;
 }
 
 .caption-section {
-    line-height: 20px;
+    line-height: 22px;
+}
+
+.caption-section p {
+    color: #1c1e21;
+}
+
+.caption-section b {
+    font-weight: 600;
+    color: #1c1e21;
 }
 #checkbox {
     display: inline-block;
@@ -151,21 +253,27 @@ main {
 }
 
 #checkbox > input[type='checkbox'] + i {
-    color: #262626;
-    transition: color 0.2s ease, transform 0.1s ease;
+    color: #65676b;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 8px;
+    margin: -8px;
 }
 
 #checkbox > input[type='checkbox']:checked + i {
     color: #ed4956;
-    animation: heartBeat 0.3s ease;
+    animation: heartBeat 0.4s ease;
 }
 
 #checkbox:hover > input[type='checkbox'] + i {
-    color: #8e8e8e;
+    color: #1c1e21;
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(1.1);
 }
 
 #checkbox:hover > input[type='checkbox']:checked + i {
     color: #ed4956;
+    background-color: rgba(237, 73, 86, 0.1);
 }
 
 #checkbox:hover > input[type='checkbox'] + i {
@@ -173,20 +281,22 @@ main {
 }
 
 #checkbox:focus-within {
-    outline: 2px solid #0095f6;
+    outline: 2px solid #1877f2;
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .lower-icon-bar div i:focus {
-    outline: 2px solid #0095f6;
+    outline: 2px solid #1877f2;
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 @keyframes heartBeat {
     0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1.1); }
+    75% { transform: scale(1.3); }
     100% { transform: scale(1); }
 }
 
@@ -199,27 +309,32 @@ main {
     #main-frame {
         width: 100%;
         margin: 10px auto;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
+        border-radius: 12px;
+        border-left: 1px solid #e1e8ed;
+        border-right: 1px solid #e1e8ed;
     }
     
     .header {
-        padding: 12px 16px;
+        padding: 16px 18px;
     }
     
     .footer {
-        padding: 12px 16px;
+        padding: 16px 18px;
     }
 }
 
 @media (max-width: 375px) {
     .lower-icon-bar div i {
         padding-right: 12px;
+        margin-right: 4px;
     }
     
     .top-left-text h5,
     .top-left-text p {
         font-size: 13px;
+    }
+    
+    #main-frame {
+        border-radius: 8px;
     }
 }
